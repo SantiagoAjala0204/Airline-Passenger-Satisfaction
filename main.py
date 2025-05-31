@@ -7,7 +7,7 @@ import numpy as np
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
-model = joblib.load("modelo_random_forest_Airline_Satisfaction.pkl")  # Reemplaza con tu modelo Random Forest
+model = joblib.load("modelo_decision_tree_Airline_Satisfaction.pkl")  # Reemplaza con tu modelo Random Forest
 
 @app.get("/", response_class=HTMLResponse)
 def form_get(request: Request):
