@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head><title>Predicción de Satisfacción del Cliente</title></head>
+<body>
+  <h2>Formulario para predicción</h2>
+  <form action="/predict" method="post">
+    <label>Edad:</label><input type="number" name="Age" required><br>
+    <label>Distancia del vuelo:</label><input type="number" name="Flight_Distance" required><br>
+    <label>Servicio de wifi abordo (1-5):</label><input type="number" name="Inflight_wifi_service" min="1" max="5" required><br>
+    <label>Conveniencia de hora de salida/llegada (1-5):</label><input type="number" name="Departure_Arrival_time_convenient" min="1" max="5" required><br>
+    <label>Comida y bebida (1-5):</label><input type="number" name="Food_and_drink" min="1" max="5" required><br>
+    <label>Comodidad del asiento (1-5):</label><input type="number" name="Seat_comfort" min="1" max="5" required><br>
+    <label>Entretenimiento abordo (1-5):</label><input type="number" name="Inflight_entertainment" min="1" max="5" required><br>
+    <label>Minutos de retraso en salida:</label><input type="number" name="Departure_Delay_in_Minutes" required><br>
+    <label>Minutos de retraso en llegada:</label><input type="number" name="Arrival_Delay_in_Minutes" required><br>
+
+    <!-- Variables categóricas -->
+    <label>Género:</label>
+    <select name="Gender">
+      <option value="Male">Masculino</option>
+      <option value="Female">Femenino</option>
+    </select><br>
+
+    <label>Tipo de cliente:</label>
+    <select name="Customer_Type">
+      <option value="Loyal Customer">Cliente leal</option>
+      <option value="disloyal Customer">Cliente desleal</option>
+    </select><br>
+
+    <label>Tipo de viaje:</label>
+    <select name="Type_of_Travel">
+      <option value="Business travel">Viaje de negocios</option>
+      <option value="Personal Travel">Viaje personal</option>
+    </select><br>
+
+    <label>Clase:</label>
+    <select name="Class">
+      <option value="Business">Business</option>
+      <option value="Eco">Económica</option>
+      <option value="Eco Plus">Económica Plus</option>
+    </select><br>
+
+    <button type="submit">Predecir</button>
+  </form>
+
+  {% if result %}
+    <h3>{{ result }}</h3>
+  {% endif %}
+</body>
+</html>
